@@ -18,6 +18,11 @@ class JwtAuthenticationFilter(
 ) : OncePerRequestFilter() {
     companion object{
         val WHITE_LIST = setOf<UrlAccessable>(
+            UrlAccessable("/swagger-resources/**"),
+            UrlAccessable("/swagger-ui.html/**"),
+            UrlAccessable("/swagger-resources/**"),
+            UrlAccessable("/swagger-ui/**"),
+            UrlAccessable("/v3/api-docs/**"),
         )
     }
     override fun doFilterInternal(
